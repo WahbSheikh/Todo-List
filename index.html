@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="ToDo list.png" />
+    <style></style>
+  </head>
+  <body onload="loadTasks()">
+    <button class="toggle-button" onclick="toggleMode()">Toggle Mode</button>
+    <div class="todo-container">
+      <div class="header">
+        <h2>TODUM <img class="todum" src="ToDo list.png" alt="" /></h2>
+      </div>
+      <div class="input-container">
+        <input
+          type="text"
+          id="task-input"
+          placeholder="Add a new task..."
+          onkeypress="handleKeyPress(event)"
+        />
+        <!-- //also want the task to be saved and added when press enter -->
+        <button onclick="addTask(), saveTasks(),loadTasks() ">Add</button>
+      </div>
+      <div id="message" class="message-box"></div>
+      <div>
+        <ul id="task-list"></ul>
+      </div>
+    </div>
+    <div id="celebration" class="celebration" style="display: none">
+      <h1 >🎉All tasks completed Congratulations! 🎉</h1>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
